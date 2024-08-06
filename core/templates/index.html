@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Lotería Mexicana</title>
+</head>
+<body>
+    <div class="board" style="grid-template-columns: repeat({{ columnas }}, 100px); grid-template-rows: repeat({{ filas }}, 100px);">
+        {% for carta in cartas %}
+            <div class="card {{ loop.cycle('azul', 'amarillo', 'rosa') }}">{{ carta }}</div>
+        {% endfor %}
+    </div>
+</body>
+</html>
